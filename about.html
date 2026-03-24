@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0a0a0a">
+<meta name="description" content="About Nexify Travel Agency — Built on trust, driven by passion. Hotels, car rentals, Hajj & Umrah packages, cruises, and immigration assistance from Troy, Michigan.">
+<title>About Us — Nexify Travel Agency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Sans:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--gold:#c9a96e;--gold-light:#e4d5b7;--gold-dark:#a8893d;--gold-dim:rgba(201,169,110,.12);--dark:#0a0a0a;--dark-card:#111111;--dark-surface:#161616;--cream:#f5f0e8;--cream-muted:#d4cfc7;--white:#ffffff;--text-secondary:rgba(255,255,255,.55);--glass-bg:rgba(255,255,255,.03);--glass-border:rgba(201,169,110,.12);--serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',Helvetica,sans-serif;--transition:cubic-bezier(.22,1,.36,1);--ease-smooth:cubic-bezier(.4,0,.2,1)}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:var(--sans);background:var(--dark);color:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+a{text-decoration:none;color:inherit}img{display:block;max-width:100%}button{font-family:var(--sans);cursor:pointer}
+body::after{content:'';position:fixed;inset:0;z-index:9998;pointer-events:none;opacity:.028;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:128px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes widthGrow{from{width:0}to{width:44px}}
+.gold-text{background:linear-gradient(135deg,var(--gold-light),var(--gold),var(--gold-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s var(--transition),transform .8s var(--transition)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+/* Nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.5rem 3rem;display:flex;align-items:center;justify-content:space-between;transition:all .5s var(--ease-smooth)}
+nav.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(24px);padding:1rem 3rem;border-bottom:1px solid var(--glass-border)}
+.nav-logo{font-family:var(--serif);font-size:1.6rem;font-weight:600;letter-spacing:.08em;color:var(--white)}
+.nav-logo em{color:var(--gold);font-style:normal}
+.menu-trigger{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);height:42px;padding:0 16px;border-radius:100px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:all .4s var(--transition);z-index:200;-webkit-tap-highlight-color:transparent;position:relative}
+.menu-trigger:hover{border-color:rgba(201,169,110,.35);background:rgba(201,169,110,.06)}
+.menu-trigger.open{border-color:var(--gold);background:rgba(201,169,110,.1)}
+.trigger-label{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream-muted);font-weight:400;font-family:var(--sans);transition:color .3s}
+.menu-trigger:hover .trigger-label,.menu-trigger.open .trigger-label{color:var(--gold)}
+.trigger-dots{display:flex;align-items:center;gap:3.5px;width:20px;height:20px;justify-content:center;position:relative;transition:all .4s var(--transition)}
+.trigger-dots span{width:4px;height:4px;background:var(--cream-muted);border-radius:50%;display:block;transition:all .5s var(--transition)}
+.trigger-dots span:nth-child(2){width:5px;height:5px;background:var(--gold)}
+.menu-trigger:hover .trigger-dots span{background:var(--gold)}
+.menu-trigger.open .trigger-dots{opacity:0;transform:scale(.5) rotate(90deg);position:absolute}
+.trigger-x{width:20px;height:20px;position:relative;display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(.5) rotate(-90deg);transition:all .5s var(--transition);pointer-events:none}
+.trigger-x span{position:absolute;width:16px;height:1.5px;background:var(--gold);border-radius:2px}
+.trigger-x span:nth-child(1){transform:rotate(45deg)}.trigger-x span:nth-child(2){transform:rotate(-45deg)}
+.menu-trigger.open .trigger-x{opacity:1;transform:scale(1) rotate(0);pointer-events:auto}
+.overlay-menu{position:fixed;inset:0;background:rgba(10,10,10,.98);backdrop-filter:blur(30px);z-index:150;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;opacity:0;visibility:hidden;transition:opacity .4s var(--ease-smooth),visibility .4s;padding:2rem}
+.overlay-menu.open{opacity:1;visibility:visible}
+.overlay-close{position:absolute;top:1.5rem;right:3rem;width:48px;height:48px;background:none;border:1px solid rgba(255,255,255,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .4s var(--transition);z-index:10}
+.overlay-close:hover{border-color:var(--gold);background:rgba(201,169,110,.08);transform:rotate(90deg)}
+.overlay-close svg{width:18px;height:18px;stroke:var(--cream-muted);stroke-width:1.5;fill:none;transition:stroke .3s}
+.overlay-close:hover svg{stroke:var(--gold)}
+.overlay-menu a{font-family:var(--serif);font-size:clamp(1.4rem,4vw,2.2rem);font-weight:400;color:var(--cream-muted);transition:all .4s var(--transition);letter-spacing:.05em;padding:clamp(.7rem,1.5vw,1rem) 0;width:100%;max-width:400px;text-align:center;border-bottom:1px solid rgba(255,255,255,.04);position:relative}
+.overlay-menu a:last-of-type{border-bottom:none}
+.overlay-menu a:hover{color:var(--gold)}
+.overlay-book-btn{background:var(--gold);color:var(--dark);padding:1rem 3.5rem;font-size:.82rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;border:none;cursor:pointer;font-family:var(--sans);margin-top:2rem;transition:all .3s}
+.overlay-book-btn:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 10px 30px rgba(201,169,110,.25)}
+/* Page hero */
+.page-hero{position:relative;padding:10rem 3rem 5rem;text-align:center;overflow:hidden}
+.page-hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=1920&q=80') center/cover no-repeat}
+.page-hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.8) 0%,rgba(10,10,10,.6) 50%,rgba(10,10,10,.9) 100%)}
+.page-hero-content{position:relative;z-index:2}
+.page-hero-tag{font-size:.65rem;letter-spacing:.45em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:14px;justify-content:center}
+.page-hero-tag::before{content:'';width:44px;height:1px;background:var(--gold)}
+.page-hero-title{font-family:var(--serif);font-size:clamp(2.5rem,6vw,4.5rem);font-weight:300;line-height:1.1;margin-bottom:1rem;color:var(--white)}
+.page-hero-title strong{font-weight:600;color:var(--gold)}
+.page-hero-sub{font-size:1.05rem;color:var(--cream-muted);max-width:560px;margin:0 auto;line-height:1.75;font-weight:300}
+/* Sections */
+.section-tag{font-size:.65rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:14px}
+.section-tag::before{content:'';width:44px;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
+section{padding:6rem 3rem}
+/* About content */
+.about-story{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.about-story-img{position:relative;height:500px;overflow:hidden}
+.about-story-img img{width:100%;height:100%;object-fit:cover}
+.about-story-img::after{content:'';position:absolute;inset:0;border:1px solid rgba(201,169,110,.12)}
+.about-accent{position:absolute;bottom:-20px;right:-20px;width:180px;height:180px;border:1px solid var(--gold);opacity:.2;pointer-events:none}
+.about-story-text h2{font-family:var(--serif);font-size:clamp(2rem,3.5vw,2.8rem);font-weight:300;margin-bottom:1.5rem;line-height:1.2}
+.about-story-text h2 strong{font-weight:600;color:var(--gold)}
+.about-story-text p{color:var(--text-secondary);line-height:1.85;font-size:.95rem;font-weight:300;margin-bottom:1.2rem}
+.about-stats{display:flex;gap:3rem;margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.07)}
+.about-stat-number{font-family:var(--serif);font-size:2.5rem;font-weight:600;color:var(--gold)}
+.about-stat-label{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--text-secondary);margin-top:.25rem}
+/* Values */
+.values-section{background:var(--dark-surface)}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem}
+.value-card{padding:2.5rem 2rem;background:var(--dark-card);border:1px solid rgba(255,255,255,.04);transition:all .5s var(--transition)}
+.value-card:hover{border-color:var(--glass-border);transform:translateY(-4px)}
+.value-icon{width:50px;height:50px;border-radius:50%;background:var(--gold-dim);display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem}
+.value-icon svg{width:22px;height:22px;stroke:var(--gold);fill:none;stroke-width:1.5}
+.value-card h3{font-family:var(--serif);font-size:1.2rem;font-weight:500;margin-bottom:.5rem}
+.value-card p{color:var(--text-secondary);font-size:.85rem;line-height:1.7;font-weight:300}
+/* Team / Mission */
+.mission-section{background:var(--dark)}
+.mission-block{max-width:700px;margin:0 auto;text-align:center}
+.mission-block h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:300;margin-bottom:1.5rem;line-height:1.25}
+.mission-block h2 strong{font-weight:600;color:var(--gold)}
+.mission-block p{color:var(--text-secondary);line-height:1.85;font-size:1rem;font-weight:300;margin-bottom:1.2rem}
+.mission-cta{display:inline-block;margin-top:1.5rem;background:var(--gold);color:var(--dark);padding:1rem 2.5rem;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;transition:all .3s;font-family:var(--sans)}
+.mission-cta:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 10px 30px rgba(201,169,110,.25)}
+/* Footer */
+footer{background:var(--dark-card);border-top:1px solid rgba(255,255,255,.04);padding:4rem 3rem 2rem}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:3rem;flex-wrap:wrap;gap:2rem}
+.footer-brand .nav-logo{margin-bottom:1rem;display:inline-block}
+.footer-brand p{color:var(--text-secondary);font-size:.85rem;max-width:300px;line-height:1.6;font-weight:300}
+.footer-links{display:flex;gap:4rem}
+.footer-col h4{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.footer-col a{display:block;font-size:.85rem;color:var(--text-secondary);margin-bottom:.5rem;transition:color .3s}
+.footer-col a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.04);padding-top:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-bottom p{font-size:.78rem;color:var(--text-secondary)}
+.footer-socials{display:flex;gap:1rem}
+.footer-socials a{width:36px;height:36px;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;transition:all .3s}
+.footer-socials a:hover{border-color:var(--gold);color:var(--gold)}
+.footer-socials a svg{width:15px;height:15px;fill:currentColor}
+/* Responsive */
+@media(max-width:1024px){.about-story,.values-grid{grid-template-columns:1fr}.about-story-img{height:350px}.values-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){section{padding:4rem 1.25rem}.page-hero{padding:8rem 1.25rem 4rem}nav{padding:1rem 1.25rem}.nav-logo{font-size:1.35rem}.menu-trigger{height:38px;padding:0 12px;gap:8px}.trigger-label{font-size:.6rem}.overlay-close{top:1.2rem;right:1.25rem;width:44px;height:44px}.about-stats{gap:2rem;flex-wrap:wrap}.values-grid{grid-template-columns:1fr}.footer-links{gap:2rem}.footer-top{flex-direction:column}footer{padding:2.5rem 1.25rem 1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:1rem}}
+@media(max-width:420px){.trigger-label{display:none}.nav-logo{font-size:1.2rem}}
+</style>
+<script data-noptimize="1" data-cfasync="false" data-wpfc-render="false">
+  (function () {
+      var script = document.createElement("script");
+      script.async = 1;
+      script.src = 'https://emrldtp.com/NTEwNjc2.js?t=510676';
+      document.head.appendChild(script);
+  })();
+</script>
+</head>
+<body>
+
+<!-- Nav -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo">N<em>E</em>XIFY</a>
+  <button class="menu-trigger" id="menuTrigger" aria-label="Menu">
+    <div class="trigger-dots"><span></span><span></span><span></span></div>
+    <div class="trigger-x"><span></span><span></span></div>
+    <span class="trigger-label">Menu</span>
+  </button>
+</nav>
+
+<div class="overlay-menu" id="overlayMenu">
+  <button class="overlay-close" id="overlayClose" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+  <a href="index.html">Home</a>
+  <a href="index.html#destinations">Destinations</a>
+  <a href="flights.html">Flights</a>
+  <a href="hotels.html">Hotels</a>
+  <a href="car-rental.html">Car Rental</a>
+  <a href="cruise.html">Cruise</a>
+  <a href="about.html">About</a>
+  <a href="reviews.html">Reviews</a>
+  <a href="index.html#contact">Contact</a>
+  <button class="overlay-book-btn" onclick="window.location.href='index.html#contact'">Book Now</button>
+</div>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="page-hero-tag">About Nexify</div>
+    <h1 class="page-hero-title">Built on Trust,<br>Driven by <strong>Passion</strong></h1>
+    <p class="page-hero-sub">We started Nexify with one belief — travel should be simple, honest, and personal. Every booking we handle is treated like our own trip.</p>
+  </div>
+</section>
+
+<!-- Our Story -->
+<section>
+  <div class="about-story">
+    <div class="about-story-img reveal">
+      <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=800&q=80" alt="Nexify travel" loading="lazy">
+      <div class="about-accent"></div>
+    </div>
+    <div class="about-story-text reveal">
+      <div class="section-tag">Our Story</div>
+      <h2>From a Simple Idea to Your <strong>Travel Partner</strong></h2>
+      <p>Nexify Travel Agency was founded in Troy, Michigan with one goal: to make travel simple, affordable, and stress-free. We serve clients locally and globally — from family vacations to life-changing pilgrimages.</p>
+      <p>We may be a young agency, but our commitment to personal service, honest pricing, and attention to detail has already earned the trust of every client we serve. Every booking matters to us — because we know every trip matters to you.</p>
+      <p>Whether you need help finding cheap flights, booking a hotel, renting a car, planning a Hajj or Umrah journey, booking a cruise, or navigating immigration and passport paperwork — Nexify handles it all under one roof.</p>
+      <div class="about-stats">
+        <div><div class="about-stat-number">50+</div><div class="about-stat-label">Clients Served</div></div>
+        <div><div class="about-stat-number">10</div><div class="about-stat-label">Destinations</div></div>
+        <div><div class="about-stat-number">9</div><div class="about-stat-label">Services</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Values -->
+<section class="values-section">
+  <div style="text-align:center" class="reveal">
+    <div class="section-tag" style="justify-content:center">Our Values</div>
+    <h2 style="font-family:var(--serif);font-size:clamp(2rem,4vw,2.8rem);font-weight:300;margin-bottom:.5rem">What We <strong style="font-weight:600;color:var(--gold)">Stand For</strong></h2>
+  </div>
+  <div class="values-grid">
+    <div class="value-card reveal">
+      <div class="value-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <h3>Honesty First</h3>
+      <p>No hidden fees, no bait-and-switch pricing. The price we quote is the price you pay. We'd rather lose a sale than lose your trust.</p>
+    </div>
+    <div class="value-card reveal">
+      <div class="value-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+      <h3>Personal Touch</h3>
+      <p>You're not a booking number to us. We learn your preferences, remember your needs, and treat every client like family.</p>
+    </div>
+    <div class="value-card reveal">
+      <div class="value-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+      <h3>Always Available</h3>
+      <p>Travel doesn't wait for business hours. We're responsive when you need us — before, during, and after your trip.</p>
+    </div>
+    <div class="value-card reveal">
+      <div class="value-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+      <h3>End-to-End Service</h3>
+      <p>From hotels to immigration paperwork — we handle every step of your journey so you don't have to juggle multiple providers.</p>
+    </div>
+    <div class="value-card reveal">
+      <div class="value-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10A15.3 15.3 0 0112 2z"/></svg></div>
+      <h3>Local & Global</h3>
+      <p>Based in Troy, Michigan but serving clients worldwide. We combine local trust with global reach.</p>
+    </div>
+    <div class="value-card reveal">
+      <div class="value-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+      <h3>Passion for Travel</h3>
+      <p>We don't just book trips — we love travel. That passion shows in the care and detail we put into every itinerary.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Mission / CTA -->
+<section class="mission-section">
+  <div class="mission-block reveal">
+    <div class="section-tag" style="justify-content:center">Our Mission</div>
+    <h2>To Make Every Journey <strong>Unforgettable</strong></h2>
+    <p>Whether it's your first international trip, a sacred pilgrimage, or a family vacation you've been dreaming about — we believe every traveler deserves a stress-free, personalized experience.</p>
+    <p>That's why we exist. That's what drives us every day.</p>
+    <a href="index.html#contact" class="mission-cta">Let's Plan Your Trip</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand"><a href="index.html" class="nav-logo">N<em>E</em>XIFY</a><p>Your complete travel partner — flights, hotels, car rentals, cruises, sacred pilgrimages, immigration &amp; passport help.</p></div>
+    <div class="footer-links">
+      <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="reviews.html">Reviews</a><a href="index.html#flights">Search Flights</a><a href="index.html#contact">Contact</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Nexify Travel Agency. All rights reserved. | nexifyta.com</p>
+    <div class="footer-socials">
+      <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a>
+      <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+      <a href="https://wa.me/12486876075" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" fill="currentColor"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',function(){document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60)});
+var trigger=document.getElementById('menuTrigger'),overlay=document.getElementById('overlayMenu');
+function openMenu(){overlay.classList.add('open');trigger.classList.add('open');document.body.style.overflow='hidden'}
+function closeMenu(){overlay.classList.remove('open');trigger.classList.remove('open');document.body.style.overflow=''}
+function toggleMenu(){overlay.classList.contains('open')?closeMenu():openMenu()}
+var isTouch='ontouchstart' in window;
+if(!isTouch){var ct;trigger.addEventListener('mouseenter',function(){clearTimeout(ct);openMenu()});trigger.addEventListener('mouseleave',function(){ct=setTimeout(closeMenu,400)});overlay.addEventListener('mouseenter',function(){clearTimeout(ct)});overlay.addEventListener('mouseleave',function(){ct=setTimeout(closeMenu,300)})}
+trigger.addEventListener('click',function(e){e.stopPropagation();toggleMenu()});
+document.getElementById('overlayClose').addEventListener('click',closeMenu);
+overlay.querySelectorAll('a,.overlay-book-btn').forEach(function(el){el.addEventListener('click',closeMenu)});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu()});
+var reveals=document.querySelectorAll('.reveal');
+var obs=new IntersectionObserver(function(entries){entries.forEach(function(entry,i){if(entry.isIntersecting){setTimeout(function(){entry.target.classList.add('visible')},i*80);obs.unobserve(entry.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+reveals.forEach(function(el){obs.observe(el)});
+</script>
+</body>
+</html>

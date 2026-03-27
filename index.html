@@ -942,14 +942,18 @@ footer{background:var(--dark-card);border-top:1px solid rgba(255,255,255,.04);pa
         <div class="contact-detail"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><div class="contact-detail-text"><span class="contact-detail-label">Location</span><span class="contact-detail-value">Troy, Michigan</span></div></div>
       </div>
     </div>
-    <div class="contact-form reveal">
-      <div class="form-row"><div class="form-group"><label for="fname">First Name</label><input type="text" id="fname" placeholder="John"></div><div class="form-group"><label for="lname">Last Name</label><input type="text" id="lname" placeholder="Doe"></div></div>
-      <div class="form-row"><div class="form-group"><label for="email">Email</label><input type="email" id="email" placeholder="john@example.com"></div><div class="form-group"><label for="phone">Phone</label><input type="tel" id="phone" placeholder="(555) 000-0000"></div></div>
-      <div class="form-group"><label for="interest">I'm Interested In</label><select id="interest"><option value="" disabled selected>Select a service</option><option>Flight Booking</option><option>Hotel Reservation</option><option>Car Rental</option><option>Hajj Package</option><option>Umrah Package</option><option>Cruise Booking</option><option>Immigration Assistance</option><option>Passport Assistance</option><option>Insurance Help</option><option>Other</option></select></div>
-      <div class="form-group"><label for="message">Tell Us About Your Trip</label><textarea id="message" placeholder="Destinations, dates, number of travelers, special requests..."></textarea></div>
-      <div class="form-submit"><button class="btn-primary" type="button" onclick="handleSubmit()">Send Inquiry</button></div>
+    <form class="contact-form reveal" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="2363c14e-5d69-4ee5-a251-c5d928c5bfbe">
+      <input type="hidden" name="subject" value="New Inquiry — Nexify Travel Agency">
+      <input type="hidden" name="from_name" value="Nexify Website">
+      <input type="checkbox" name="botcheck" class="hidden" style="display:none!important">
+      <div class="form-row"><div class="form-group"><label for="fname">First Name</label><input type="text" id="fname" name="First Name" placeholder="John" required></div><div class="form-group"><label for="lname">Last Name</label><input type="text" id="lname" name="Last Name" placeholder="Doe" required></div></div>
+      <div class="form-row"><div class="form-group"><label for="email">Email</label><input type="email" id="email" name="Email" placeholder="john@example.com" required></div><div class="form-group"><label for="phone">Phone</label><input type="tel" id="phone" name="Phone" placeholder="(555) 000-0000"></div></div>
+      <div class="form-group"><label for="interest">I'm Interested In</label><select id="interest" name="Service Interest"><option value="" disabled selected>Select a service</option><option>Flight Booking</option><option>Hotel Reservation</option><option>Car Rental</option><option>Hajj Package</option><option>Umrah Package</option><option>Cruise Booking</option><option>Immigration Assistance</option><option>Passport Assistance</option><option>Insurance Help</option><option>Other</option></select></div>
+      <div class="form-group"><label for="message">Tell Us About Your Trip</label><textarea id="message" name="Message" placeholder="Destinations, dates, number of travelers, special requests..." required></textarea></div>
+      <div class="form-submit"><button class="btn-primary" type="submit">Send Inquiry</button></div>
       <p class="form-note">We'll respond within 24 hours. No spam, ever.</p>
-    </div>
+    </form>
   </div>
 </section>
 
@@ -981,7 +985,6 @@ footer{background:var(--dark-card);border-top:1px solid rgba(255,255,255,.04);pa
 <div class="toast" id="toast"></div>
 
 <!-- ═══ JAVASCRIPT ═══ -->
-<script>
 window.addEventListener('load',function(){setTimeout(function(){document.getElementById('loader').classList.add('hidden')},800)});
 window.addEventListener('scroll',function(){document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60)});
 // ── Menu: hover to open on desktop, tap on mobile ──
@@ -1070,15 +1073,30 @@ var statsObs=new IntersectionObserver(function(entries){
 },{threshold:0.3});
 statsObs.observe(document.querySelector('.stats-bar'));
 
-function handleSubmit(){
-  var btn=document.querySelector('.form-submit .btn-primary');
-  btn.textContent='Sending...';btn.style.opacity='.6';
-  setTimeout(function(){
-    btn.textContent='Inquiry Sent \u2713';btn.style.opacity='1';btn.style.background='#2d8a4e';btn.style.color='#fff';
-    showToast('Thank you! We\'ll respond within 24 hours.');
-    setTimeout(function(){btn.textContent='Send Inquiry';btn.style.background='';btn.style.color=''},3000);
-  },1500);
-}
+// ── Contact form submission via Web3Forms ──
+document.getElementById('contactForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  var btn=this.querySelector('.btn-primary');
+  var form=this;
+  btn.textContent='Sending...';btn.style.opacity='.6';btn.disabled=true;
+  fetch('https://api.web3forms.com/submit',{
+    method:'POST',
+    body:new FormData(form)
+  }).then(function(res){return res.json()}).then(function(data){
+    if(data.success){
+      btn.textContent='Inquiry Sent \u2713';btn.style.opacity='1';btn.style.background='#2d8a4e';btn.style.color='#fff';
+      showToast('Thank you! We\'ll respond within 24 hours.');
+      form.reset();
+      setTimeout(function(){btn.textContent='Send Inquiry';btn.style.background='';btn.style.color='';btn.disabled=false},3000);
+    }else{
+      btn.textContent='Send Inquiry';btn.style.opacity='1';btn.disabled=false;
+      showToast('Something went wrong. Please try again or call us.');
+    }
+  }).catch(function(){
+    btn.textContent='Send Inquiry';btn.style.opacity='1';btn.disabled=false;
+    showToast('Network error. Please try again or call us.');
+  });
+});
 
 // ── Flight type tabs ──
 var currentFlightType='oneway';
@@ -1140,12 +1158,6 @@ function searchFlights(){
   showToast('Opening flight results — find the best deal!');
 }
 
-function showToast(msg){
-  var t=document.getElementById('toast');
-  t.textContent=msg;t.classList.add('show');
-  clearTimeout(window._tt);
-  window._tt=setTimeout(function(){t.classList.remove('show')},3500);
-}
 </script>
 </body>
 </html>

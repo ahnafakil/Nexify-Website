@@ -366,73 +366,6 @@ footer{background:var(--dark-card);border-top:1px solid rgba(255,255,255,.04);pa
 .toast{position:fixed;bottom:100px;right:28px;padding:1rem 1.5rem;background:var(--dark-card);border:1px solid var(--gold);border-radius:10px;color:var(--cream);font-size:.88rem;z-index:200;animation:slideDown .4s var(--transition);max-width:300px;box-shadow:0 12px 48px rgba(0,0,0,.6);display:none}
 .toast.show{display:block}
 
-/* ═══ FLIGHT SEARCH — Premium White Card Widget ═══ */
-.flights{position:relative;padding:7rem 3rem;overflow:hidden}
-.flights-bg{position:absolute;inset:0;background:url('Flight_Homepage.jpeg') center/cover no-repeat}
-.flights-bg-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.85) 0%,rgba(10,10,10,.7) 50%,rgba(10,10,10,.9) 100%)}
-.flights-header{position:relative;z-index:2;text-align:center;margin-bottom:3rem}
-.flights-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 20px;background:rgba(255,255,255,.08);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.1);border-radius:100px;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem}
-.flights-badge svg{width:16px;height:16px}
-.flights-title{font-family:var(--serif);font-size:clamp(2rem,5vw,3.5rem);font-weight:300;color:var(--white);margin-bottom:.8rem}
-.flights-title strong{font-weight:600;color:var(--gold)}
-.flights-subtitle{font-size:1rem;color:var(--cream-muted);font-weight:300}
-
-/* The white card */
-.fl-card{position:relative;z-index:2;background:#ffffff;border-radius:20px;padding:2.5rem;max-width:1100px;margin:0 auto;box-shadow:0 30px 80px rgba(0,0,0,.4)}
-
-/* Card header */
-.fl-card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:1px solid #f0ede8}
-.fl-card-title{display:flex;align-items:center;gap:12px}
-.fl-card-icon{width:44px;height:44px;background:var(--gold);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff}
-.fl-card-icon svg{width:22px;height:22px}
-.fl-card-title h3{font-family:var(--serif);font-size:1.35rem;font-weight:600;color:#1a1a1a}
-.fl-card-title span{font-size:.82rem;color:#999;font-weight:300;display:block;margin-top:2px}
-.fl-live{display:inline-flex;align-items:center;gap:6px;padding:6px 16px;border:1px solid #d4f5d4;border-radius:100px;font-size:.72rem;font-weight:500;color:#22a355;letter-spacing:.05em}
-.fl-live-dot{width:8px;height:8px;background:#22a355;border-radius:50%;animation:float 2s ease-in-out infinite}
-
-/* Trip type tabs */
-.fl-tabs{display:flex;gap:0;margin-bottom:2rem;background:#f8f6f2;border-radius:14px;padding:6px;overflow:hidden}
-.fl-tab{flex:1;display:flex;align-items:center;justify-content:center;gap:10px;padding:14px 16px;background:transparent;border:none;border-radius:10px;color:#888;font-size:.82rem;font-weight:500;cursor:pointer;transition:all .3s var(--transition);font-family:var(--sans)}
-.fl-tab svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.5;flex-shrink:0}
-.fl-tab-text{display:flex;flex-direction:column;align-items:flex-start;gap:1px}
-.fl-tab-name{font-weight:600;font-size:.85rem}
-.fl-tab-desc{font-size:.65rem;font-weight:300;opacity:.7;white-space:nowrap}
-.fl-tab.active{background:#1a1a1a;color:#fff;box-shadow:0 4px 20px rgba(0,0,0,.15)}
-
-/* Input fields row */
-.fl-fields{display:flex;gap:10px;align-items:stretch}
-.fl-field{flex:1;display:flex;align-items:center;gap:10px;padding:14px 16px;background:#f8f6f2;border:2px solid #f0ede8;border-radius:14px;cursor:text;transition:border .3s;position:relative}
-.fl-field:focus-within{border-color:var(--gold)}
-.fl-field-icon{width:36px;height:36px;background:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid #eee}
-.fl-field-icon svg{width:16px;height:16px;stroke:#999;fill:none;stroke-width:1.8}
-.fl-field-content{display:flex;flex-direction:column;gap:2px;flex:1;min-width:0}
-.fl-field-label{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:#aaa;font-weight:500}
-.fl-field-content input,.fl-field-content select{border:none;background:transparent;color:#1a1a1a;font-size:.92rem;font-weight:500;padding:0;outline:none;font-family:var(--sans);width:100%}
-.fl-field-content input::placeholder{color:#ccc}
-.fl-field-content select{-webkit-appearance:none;cursor:pointer}
-.fl-field-content select option{background:#fff;color:#1a1a1a}
-
-/* Green dot indicator on fields */
-.fl-dot{width:8px;height:8px;background:#22a355;border-radius:50%;position:absolute;bottom:14px;right:14px;opacity:0;transition:opacity .3s}
-.fl-field:focus-within .fl-dot{opacity:1}
-
-/* Swap button between from/to */
-.fl-swap{width:40px;height:40px;background:#fff;border:2px solid #eee;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s;flex-shrink:0;align-self:center;margin:0 -5px;z-index:2}
-.fl-swap:hover{border-color:var(--gold);background:#faf6ef;transform:rotate(180deg)}
-.fl-swap svg{width:16px;height:16px;stroke:#888;fill:none;stroke-width:2}
-
-/* Search button */
-.fl-search-btn{width:60px;height:auto;min-height:60px;background:var(--gold);border:none;border-radius:14px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:all .3s;align-self:stretch}
-.fl-search-btn:hover{background:var(--gold-light);transform:scale(1.05);box-shadow:0 8px 30px rgba(201,169,110,.4)}
-.fl-search-btn svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:2.5}
-
-/* Powered by bar */
-.fl-powered{display:flex;align-items:center;justify-content:center;gap:1.5rem;margin-top:1.8rem;padding-top:1.5rem;border-top:1px solid #f0ede8;flex-wrap:wrap}
-.fl-powered-label{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#bbb;font-weight:400}
-.fl-powered-logos{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
-.fl-powered-logo{font-size:.72rem;color:#999;font-weight:500;letter-spacing:.05em;padding:4px 12px;background:#f8f6f2;border-radius:6px;transition:color .3s}
-.fl-powered-logo:hover{color:var(--gold)}
-
 /* ═══ RESPONSIVE — Tablet ═══ */
 @media(max-width:1024px){
   .svc-grid{grid-template-columns:repeat(2,1fr)}
@@ -442,17 +375,12 @@ footer{background:var(--dark-card);border-top:1px solid rgba(255,255,255,.04);pa
   .dest-grid{grid-template-columns:repeat(2,1fr)}
   .about-grid,.contact-grid{grid-template-columns:1fr;gap:3rem}
   .about-image{height:400px}
-  .fl-fields{flex-wrap:wrap}
-  .fl-field{min-width:calc(50% - 30px)}
-  .fl-swap{display:none}
-  .fl-tabs{flex-wrap:wrap}
 }
 
 /* ═══ RESPONSIVE — Mobile ═══ */
 @media(max-width:768px){
   /* ── Base spacing ── */
   section{padding:4rem 1.25rem}
-  .flights{padding:4rem 1.25rem}
   nav{padding:1rem 1.25rem}
   nav.scrolled{padding:.8rem 1.25rem}
   .nav-logo{font-size:1.35rem}
@@ -512,26 +440,7 @@ footer{background:var(--dark-card);border-top:1px solid rgba(255,255,255,.04);pa
   .dest-arrow{display:none}
 
   /* ── Flight search card ── */
-  .flights-title{font-size:clamp(1.6rem,6vw,2.4rem)}
-  .flights-subtitle{font-size:.88rem}
-  .flights-badge{font-size:.6rem;padding:6px 14px}
-  .fl-card{padding:1.25rem;border-radius:14px;margin:0 -0.25rem}
-  .fl-card-header{flex-direction:column;align-items:flex-start;gap:10px;margin-bottom:1.25rem;padding-bottom:1rem}
-  .fl-card-title h3{font-size:1.15rem}
-  .fl-tabs{padding:4px;border-radius:10px;margin-bottom:1.25rem}
-  .fl-tab{padding:10px 8px;border-radius:8px;gap:8px}
-  .fl-tab-desc{display:none}
-  .fl-tab-name{font-size:.78rem}
-  .fl-tab svg{width:16px;height:16px}
-  .fl-fields{flex-direction:column;gap:10px}
-  .fl-field{min-width:100%;padding:12px 14px;border-radius:12px}
-  .fl-field-icon{width:32px;height:32px;border-radius:8px}
-  .fl-field-content input,.fl-field-content select{font-size:.88rem}
   .fl-search-btn{width:100%;min-height:52px;border-radius:12px;flex-direction:row;gap:8px}
-  .fl-swap{display:none}
-  .fl-powered{flex-direction:column;gap:.8rem;margin-top:1.25rem;padding-top:1rem}
-  .fl-powered-logos{justify-content:center}
-  .fl-powered-logo{font-size:.62rem;padding:3px 8px}
 
   /* ── Why cards ── */
   .why-grid{grid-template-columns:1fr;gap:0}
@@ -596,7 +505,6 @@ footer{background:var(--dark-card);border-top:1px solid rgba(255,255,255,.04);pa
   .stat-item{padding:1.2rem 1rem;display:flex;align-items:center;justify-content:center;gap:1rem}
   .stat-number{font-size:1.6rem;margin-bottom:0}
   .stat-label{text-align:left}
-  .fl-tab{flex:1 1 100%}
   .hero-buttons{flex-direction:column}
   .hero-buttons .btn-primary,.hero-buttons .btn-outline{width:100%}
   .nav-logo{font-size:1.2rem}
@@ -612,29 +520,24 @@ footer{background:var(--dark-card);border-top:1px solid rgba(255,255,255,.04);pa
       document.head.appendChild(script);
   })();
 </script>
+
 </head>
 <body>
 
 <!-- ═══ LOADER ═══ -->
 <div class="loader" id="loader"><div class="loader-line"></div><span>Nexify</span></div>
 
-<!-- ═══ NAVBAR — Logo + Three-Dot Menu ═══ -->
+<!-- ═══ NAVBAR ═══ -->
 <nav id="nav">
   <a href="#" class="nav-logo">N<em>E</em>XIFY</a>
   <button class="menu-trigger" id="menuTrigger" aria-label="Menu">
-    <!-- Dots state (default) -->
-    <div class="trigger-dots">
-      <span></span><span></span><span></span>
-    </div>
-    <!-- X state (when open) -->
-    <div class="trigger-x">
-      <span></span><span></span>
-    </div>
+    <div class="trigger-dots"><span></span><span></span><span></span></div>
+    <div class="trigger-x"><span></span><span></span></div>
     <span class="trigger-label">Menu</span>
   </button>
 </nav>
 
-<!-- Full-screen overlay menu -->
+<!-- Overlay Menu -->
 <div class="overlay-menu" id="overlayMenu">
   <button class="overlay-close" id="overlayClose" aria-label="Close menu">
     <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
@@ -665,24 +568,24 @@ footer{background:var(--dark-card);border-top:1px solid rgba(255,255,255,.04);pa
   <div class="hero-vignette"></div>
   <div class="hero-content">
     <p class="hero-tag">Your Complete Travel Partner</p>
-    <h1 class="hero-title">Journey Beyond the <strong>Ordinary</strong></h1>
+    <h1 class="hero-title">Journey Beyond<br>the <strong class="gold-text gold-shimmer">Ordinary</strong></h1>
     <p class="hero-sub">Flights, hotels, car rentals, sacred pilgrimages, cruises, and full immigration support — we handle every detail so you can focus on the experience.</p>
     <div class="hero-buttons">
       <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Plan Your Trip</button>
       <button class="btn-outline" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Our Services</button>
     </div>
   </div>
-  <div class="hero-scroll"><span>Discover</span><div class="scroll-line"></div></div>
+  <div class="hero-scroll"><div class="scroll-line"></div></div>
 </section>
 
-<!-- ═══ STATS BAR — Honest startup numbers ═══ -->
+<!-- ═══ STATS BAR ═══ -->
 <div class="stats-bar">
   <div class="stat-item"><div class="stat-number" data-count="50" data-suffix="+">0</div><div class="stat-label">Clients Served</div></div>
   <div class="stat-item"><div class="stat-number" data-count="10" data-suffix="">0</div><div class="stat-label">Destinations</div></div>
   <div class="stat-item"><div class="stat-number" data-count="9" data-suffix="">0</div><div class="stat-label">Services Offered</div></div>
 </div>
 
-<!-- ═══ SERVICES — Your actual services ═══ -->
+<!-- ═══ SERVICES ═══ -->
 <section class="services-section" id="services">
   <div class="section-header reveal">
     <p class="section-tag">Our Services</p>
@@ -701,7 +604,6 @@ footer{background:var(--dark-card);border-top:1px solid rgba(255,255,255,.04);pa
         <a href="https://flights.nexifyta.com" class="svc-card-link">Search Flights <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
     </div>
-
     <!-- Hotels -->
     <div class="svc-card reveal">
       <div class="svc-card-image"><img src="Hotel_Homepage.jpeg" alt="Hotels" loading="lazy"></div>
@@ -712,7 +614,6 @@ footer{background:var(--dark-card);border-top:1px solid rgba(255,255,255,.04);pa
         <a href="hotels.html" class="svc-card-link">Find a Hotel <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
     </div>
-
     <!-- Car Rental -->
     <div class="svc-card reveal">
       <div class="svc-card-image"><img src="Car_Rental_Homepage.jpeg" alt="Car Rental" loading="lazy"></div>
@@ -723,7 +624,6 @@ footer{background:var(--dark-card);border-top:1px solid rgba(255,255,255,.04);pa
         <a href="car-rental.html" class="svc-card-link">Rent a Car <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
     </div>
-
     <!-- Cruise -->
     <div class="svc-card reveal">
       <div class="svc-card-image"><img src="Cruise_Homepage.jpeg" alt="Cruise" loading="lazy"></div>
@@ -734,7 +634,6 @@ footer{background:var(--dark-card);border-top:1px solid rgba(255,255,255,.04);pa
         <a href="cruise.html" class="svc-card-link">Book a Cruise <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
     </div>
-
   </div>
 
   <!-- Insurance, Immigration & Passport Row -->
@@ -749,7 +648,6 @@ footer{background:var(--dark-card);border-top:1px solid rgba(255,255,255,.04);pa
         <a href="#contact" class="svc-card-link">Get Covered <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
     </div>
-
     <!-- Immigration Assistance -->
     <div class="svc-card reveal">
       <div class="svc-card-image"><img src="Immigration_Homepage.png" alt="Immigration" loading="lazy"></div>
@@ -760,7 +658,6 @@ footer{background:var(--dark-card);border-top:1px solid rgba(255,255,255,.04);pa
         <a href="#contact" class="svc-card-link">Get Help <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
     </div>
-
     <!-- Passport Assistance -->
     <div class="svc-card reveal">
       <div class="svc-card-image"><img src="Passport_Homepage.png" alt="Passport" loading="lazy"></div>
@@ -779,7 +676,7 @@ footer{background:var(--dark-card);border-top:1px solid rgba(255,255,255,.04);pa
       <img src="Hajj_Homepage.jpg" alt="Hajj" loading="lazy">
       <div class="svc-featured-overlay"></div>
       <div class="svc-featured-content">
-        <span class="svc-featured-badge">Sacred Journey</span>
+        <div class="svc-featured-badge">Sacred Journey</div>
         <h3>Hajj Packages</h3>
         <p>Comprehensive Hajj packages with guided itineraries, premium accommodation near the Haram, ground transportation, and full visa assistance.</p>
         <a href="#contact" class="svc-featured-cta">Explore Hajj Packages <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
@@ -789,7 +686,7 @@ footer{background:var(--dark-card);border-top:1px solid rgba(255,255,255,.04);pa
       <img src="Umrah_Homepage.jpg" alt="Umrah" loading="lazy">
       <div class="svc-featured-overlay"></div>
       <div class="svc-featured-content">
-        <span class="svc-featured-badge">Year-Round</span>
+        <div class="svc-featured-badge">Year-Round</div>
         <h3>Umrah Packages</h3>
         <p>Flexible Umrah packages available year-round. Economy to VIP tiers with hotel stays in Makkah & Madinah, Ziyarat tours, and dedicated group leaders.</p>
         <a href="#contact" class="svc-featured-cta">Explore Umrah Packages <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
@@ -802,131 +699,42 @@ footer{background:var(--dark-card);border-top:1px solid rgba(255,255,255,.04);pa
 <section class="dest-section" id="destinations">
   <div class="section-header reveal">
     <p class="section-tag">Destinations</p>
-    <h2 class="section-title">Where Will Your Next <strong>Adventure</strong> Be?</h2>
-    <p class="section-desc">A selection of our most popular destinations — handpicked for unforgettable experiences.</p>
+    <h2 class="section-title">Where Will You <strong>Go Next</strong>?</h2>
+    <p class="section-desc">From tropical paradises to cultural capitals — explore our most popular destinations and start planning your next escape.</p>
   </div>
   <div class="dest-grid">
-    <div class="dest-card reveal"><img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600&h=750&fit=crop" alt="Maldives" loading="lazy"><div class="dest-overlay"><div class="dest-tag">POPULAR</div><div class="dest-name">Maldives</div><div class="dest-sub">Overwater Paradise</div><div class="dest-price">From $2,499</div><div class="dest-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div></div></div>
-    <div class="dest-card reveal"><img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&h=750&fit=crop" alt="Dubai" loading="lazy"><div class="dest-overlay"><div class="dest-tag">TOP PICK</div><div class="dest-name">Dubai</div><div class="dest-sub">City of Gold</div><div class="dest-price">From $1,299</div><div class="dest-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div></div></div>
-    <div class="dest-card reveal"><img src="https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=600&h=750&fit=crop" alt="Santorini" loading="lazy"><div class="dest-overlay"><div class="dest-tag">ROMANTIC</div><div class="dest-name">Santorini</div><div class="dest-sub">Greek Island Beauty</div><div class="dest-price">From $1,899</div><div class="dest-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div></div></div>
-    <div class="dest-card reveal"><img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&h=750&fit=crop" alt="Bali" loading="lazy"><div class="dest-overlay"><div class="dest-tag">SERENE</div><div class="dest-name">Bali</div><div class="dest-sub">Tropical Retreat</div><div class="dest-price">From $1,599</div><div class="dest-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div></div></div>
+    <div class="dest-card reveal"><img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600&h=750&fit=crop" alt="Maldives" loading="lazy"><div class="dest-overlay"></div><div class="dest-tag">Trending</div><h3 class="dest-name">Maldives</h3><p class="dest-sub">Indian Ocean</p><span class="dest-price">From $899</span><div class="dest-arrow"><svg viewBox="0 0 24 24"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></div></div>
+    <div class="dest-card reveal"><img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&h=750&fit=crop" alt="Dubai" loading="lazy"><div class="dest-overlay"></div><h3 class="dest-name">Dubai</h3><p class="dest-sub">United Arab Emirates</p><span class="dest-price">From $649</span><div class="dest-arrow"><svg viewBox="0 0 24 24"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></div></div>
+    <div class="dest-card reveal"><img src="https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=600&h=750&fit=crop" alt="Santorini" loading="lazy"><div class="dest-overlay"></div><h3 class="dest-name">Santorini</h3><p class="dest-sub">Greece</p><span class="dest-price">From $799</span><div class="dest-arrow"><svg viewBox="0 0 24 24"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></div></div>
+    <div class="dest-card reveal"><img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&h=750&fit=crop" alt="Bali" loading="lazy"><div class="dest-overlay"></div><h3 class="dest-name">Bali</h3><p class="dest-sub">Indonesia</p><span class="dest-price">From $749</span><div class="dest-arrow"><svg viewBox="0 0 24 24"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></div></div>
   </div>
 </section>
 
 <!-- ═══ WHY CHOOSE US ═══ -->
 <section class="why-section" id="why">
-  <div class="section-header reveal" style="text-align:center">
-    <p class="section-tag" style="justify-content:center">Why Choose Us</p>
-    <h2 class="section-title">The Nexify <strong>Difference</strong></h2>
+  <div class="section-header reveal">
+    <p class="section-tag">Why Nexify</p>
+    <h2 class="section-title">Why Travelers <strong>Choose Us</strong></h2>
   </div>
   <div class="why-grid">
-    <div class="why-card reveal"><div class="why-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><h4>Always Available</h4><p>Responsive support when you need it — before, during, and after your trip. We're just a call or message away.</p></div>
-    <div class="why-card reveal"><div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h4>Trusted & Transparent</h4><p>No hidden fees, no surprises. We communicate clearly and deliver exactly what we promise.</p></div>
-    <div class="why-card reveal"><div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div><h4>End-to-End Service</h4><p>Hotels, transport, pilgrimages, paperwork — we handle every detail of your journey under one roof.</p></div>
-    <div class="why-card reveal"><div class="why-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div><h4>Personal Touch</h4><p>Every trip is tailored to your needs, budget, and preferences. We treat every client like family.</p></div>
+    <div class="why-card reveal"><div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h4>Trusted Agency</h4><p>Licensed and insured. We've served 50+ clients with a 100% satisfaction record.</p></div></div>
+    <div class="why-card reveal"><div class="why-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><h4>24/7 Support</h4><p>Our travel advisors are available around the clock — before, during, and after your trip.</p></div></div>
+    <div class="why-card reveal"><div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div><div><h4>All-in-One Service</h4><p>Flights, hotels, cars, cruises, pilgrimages, immigration — everything handled under one roof.</p></div></div>
+    <div class="why-card reveal"><div class="why-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div><div><h4>Personal Touch</h4><p>You're not a booking number. We learn your preferences and craft every trip around you.</p></div></div>
+    <div class="why-card reveal"><div class="why-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div><h4>Best Price Guarantee</h4><p>We compare hundreds of providers to find you the best deal — or we'll match any lower price.</p></div></div>
+    <div class="why-card reveal"><div class="why-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10A15.3 15.3 0 0112 2z"/></svg></div><div><h4>Global Reach</h4><p>Based in Troy, Michigan — serving travelers worldwide across 10+ destinations.</p></div></div>
   </div>
 </section>
 
 <!-- ═══ CTA BANNER ═══ -->
 <div class="cta-banner reveal">
-  <h2>Ready to Start Your <strong>Next Chapter</strong>?</h2>
-  <p>Let us handle the details — from your first inquiry to your safe return home. Reach out and let's make it happen.</p>
+  <h2>Ready to Start Your <strong>Journey</strong>?</h2>
+  <p>Let our travel advisors craft the perfect trip for you — no fees for consultations.</p>
   <div class="cta-buttons">
-    <a href="#contact" class="btn-primary" style="display:inline-block">Get a Free Quote</a>
-    <a href="https://wa.me/12486876075?text=Hi%20Nexify!%20I'm%20interested%20in%20your%20services." target="_blank" rel="noopener" class="btn-whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg> Chat on WhatsApp</a>
+    <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Plan My Trip</button>
+    <a href="https://wa.me/12486876075" target="_blank" class="btn-whatsapp"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg> WhatsApp Us</a>
   </div>
 </div>
-
-<!-- ═══════════════════════════════════════════════════════════════════════
-     FLIGHT SEARCH — AFFILIATE REVENUE ENGINE
-     
-     HOW THIS MAKES YOU MONEY (Beginner Guide):
-     1. Go to https://www.travelpayouts.com and create a FREE account
-     2. Join "Aviasales" flight program, get your MARKER ID
-     3. In searchFlights() JS function, replace the Google Flights URL
-        with your Travelpayouts affiliate URL
-     4. Every booking through your site = commission for you
-     ═══════════════════════════════════════════════════════════════════════ -->
-
-<section class="flights" id="flights">
-  <div class="flights-bg"></div>
-  <div class="flights-bg-overlay"></div>
-
-  <div class="flights-header reveal">
-    <div class="flights-badge">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.4-.1.9.3 1.1L11 12l-2 3H6l-1 1 3 2 2 3 1-1v-3l3-2 3.7 7.3c.2.4.7.5 1.1.3l.5-.3c.4-.2.6-.6.5-1.1z"/></svg>
-      Search &amp; Compare Flights
-    </div>
-    <h2 class="flights-title">Find &amp; Book <strong>Best Flight Deals</strong></h2>
-    <p class="flights-subtitle">Search, compare and book flights to anywhere in the world.</p>
-  </div>
-
-  <div class="fl-card reveal">
-    <div class="fl-card-header">
-      <div class="fl-card-title">
-        <div class="fl-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.4-.1.9.3 1.1L11 12l-2 3H6l-1 1 3 2 2 3 1-1v-3l3-2 3.7 7.3c.2.4.7.5 1.1.3l.5-.3c.4-.2.6-.6.5-1.1z"/></svg></div>
-        <div><h3>Search Flights</h3><span>Find the best deals worldwide</span></div>
-      </div>
-      <div class="fl-live"><div class="fl-live-dot"></div> Live Prices</div>
-    </div>
-
-    <div class="fl-tabs">
-      <button class="fl-tab" onclick="setFlightType(this,'roundtrip')" data-type="roundtrip">
-        <svg viewBox="0 0 24 24"><path d="M8 3l4 4-4 4"/><path d="M16 21l-4-4 4-4"/><path d="M12 7h7a2 2 0 012 2v2"/><path d="M12 17H5a2 2 0 01-2-2v-2"/></svg>
-        <div class="fl-tab-text"><span class="fl-tab-name">Round Trip</span><span class="fl-tab-desc">Go and return on selected dates</span></div>
-      </button>
-      <button class="fl-tab active" onclick="setFlightType(this,'oneway')" data-type="oneway">
-        <svg viewBox="0 0 24 24"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2"/></svg>
-        <div class="fl-tab-text"><span class="fl-tab-name">One Way</span><span class="fl-tab-desc">Single journey to your destination</span></div>
-      </button>
-      <button class="fl-tab" onclick="setFlightType(this,'multicity')" data-type="multicity">
-        <svg viewBox="0 0 24 24"><path d="M3 17h4l3-10h4l3 10h4"/><circle cx="7" cy="17" r="1"/><circle cx="17" cy="17" r="1"/><circle cx="12" cy="7" r="1"/></svg>
-        <div class="fl-tab-text"><span class="fl-tab-name">Multi City</span><span class="fl-tab-desc">Visit multiple cities in one itinerary</span></div>
-      </button>
-    </div>
-
-    <div class="fl-fields">
-      <div class="fl-field">
-        <div class="fl-field-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-        <div class="fl-field-content"><span class="fl-field-label">From</span><input type="text" id="flFrom" placeholder="City or airport"></div>
-        <div class="fl-dot"></div>
-      </div>
-      <button class="fl-swap" onclick="swapCities()" title="Swap cities"><svg viewBox="0 0 24 24"><path d="M8 3l4 4-4 4"/><path d="M16 21l-4-4 4-4"/></svg></button>
-      <div class="fl-field">
-        <div class="fl-field-icon"><svg viewBox="0 0 24 24"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2"/></svg></div>
-        <div class="fl-field-content"><span class="fl-field-label">To</span><input type="text" id="flTo" placeholder="City or airport"></div>
-        <div class="fl-dot"></div>
-      </div>
-      <div class="fl-field">
-        <div class="fl-field-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
-        <div class="fl-field-content"><span class="fl-field-label">Departure</span><input type="date" id="flDepart"></div>
-        <div class="fl-dot"></div>
-      </div>
-      <div class="fl-field" id="returnField" style="display:none">
-        <div class="fl-field-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
-        <div class="fl-field-content"><span class="fl-field-label">Return</span><input type="date" id="flReturn"></div>
-        <div class="fl-dot"></div>
-      </div>
-      <div class="fl-field">
-        <div class="fl-field-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-        <div class="fl-field-content"><span class="fl-field-label">Travelers</span><select id="flPax"><option value="1">1 Adult</option><option value="2">2 Adults</option><option value="3">3 Adults</option><option value="4">4 Adults</option><option value="5">5+ Adults</option></select></div>
-        <div class="fl-dot"></div>
-      </div>
-      <button class="fl-search-btn" onclick="searchFlights()" title="Search Flights"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></button>
-    </div>
-
-    <div class="fl-powered">
-      <span class="fl-powered-label">Compare prices from</span>
-      <div class="fl-powered-logos">
-        <span class="fl-powered-logo">Google Flights</span>
-        <span class="fl-powered-logo">Skyscanner</span>
-        <span class="fl-powered-logo">Kayak</span>
-        <span class="fl-powered-logo">Expedia</span>
-        <span class="fl-powered-logo">Booking.com</span>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ═══ CONTACT ═══ -->
 <section class="contact" id="contact">
@@ -966,25 +774,23 @@ footer{background:var(--dark-card);border-top:1px solid rgba(255,255,255,.04);pa
   <div class="footer-top">
     <div class="footer-brand"><a href="#" class="nav-logo">N<em>E</em>XIFY</a><p>Your complete travel partner — flights, hotels, car rentals, cruises, sacred pilgrimages, immigration &amp; passport help, all under one roof.</p></div>
     <div class="footer-links">
-      <div class="footer-col"><h4>Assistance</h4><a href="#services">Immigration</a><a href="#services">Passport</a><a href="#services">Insurance</a><a href="#">Visa Help</a></div>
-      <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="reviews.html">Reviews</a><a href="https://flights.nexifyta.com">Search Flights</a><a href="#contact">Contact</a><a href="#">Privacy Policy</a></div>
+      <div class="footer-col"><h4>Services</h4><a href="https://flights.nexifyta.com">Flights</a><a href="hotels.html">Hotels</a><a href="car-rental.html">Car Rental</a><a href="cruise.html">Cruise</a><a href="#services">Hajj Packages</a><a href="#services">Umrah Packages</a></div>
+      <div class="footer-col"><h4>Assistance</h4><a href="#services">Immigration</a><a href="#services">Passport</a><a href="#services">Insurance</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="reviews.html">Reviews</a><a href="https://flights.nexifyta.com">Search Flights</a><a href="#contact">Contact</a></div>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2026 Nexify Travel Agency. All rights reserved. &nbsp;|&nbsp; nexifyta.com</p>
+    <p>&copy; 2026 Nexify Travel Agency. All rights reserved. | nexifyta.com</p>
     <div class="footer-socials">
       <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a>
       <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
       <a href="https://wa.me/12486876075" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" fill="currentColor"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
-      <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </div>
 </footer>
 
-<!-- ═══ WHATSAPP FAB ═══ -->
-<button class="wa-fab" onclick="window.open('https://wa.me/12486876075?text=Hi%20Nexify!%20I%27m%20interested%20in%20your%20services.','_blank')" title="Chat on WhatsApp">
-  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</button>
+<!-- WhatsApp FAB -->
+<a href="https://wa.me/12486876075" target="_blank" class="wa-fab" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg></a>
 
 <div class="toast" id="toast"></div>
 
@@ -992,93 +798,37 @@ footer{background:var(--dark-card);border-top:1px solid rgba(255,255,255,.04);pa
 <script>
 window.addEventListener('load',function(){setTimeout(function(){document.getElementById('loader').classList.add('hidden')},800)});
 window.addEventListener('scroll',function(){document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60)});
-// ── Menu: hover to open on desktop, tap on mobile ──
+
+// ── Menu ──
 var trigger=document.getElementById('menuTrigger');
 var overlay=document.getElementById('overlayMenu');
 var closeTimer=null;
 var isTouch='ontouchstart' in window;
+function openMenu(){clearTimeout(closeTimer);overlay.classList.add('open');trigger.classList.add('open');document.body.style.overflow='hidden'}
+function closeMenu(){overlay.classList.remove('open');trigger.classList.remove('open');document.body.style.overflow=''}
+function toggleMenu(){if(overlay.classList.contains('open')){closeMenu()}else{openMenu()}}
+if(!isTouch){trigger.addEventListener('mouseenter',function(){openMenu()});trigger.addEventListener('mouseleave',function(){closeTimer=setTimeout(closeMenu,400)});overlay.addEventListener('mouseenter',function(){clearTimeout(closeTimer)});overlay.addEventListener('mouseleave',function(){closeTimer=setTimeout(closeMenu,300)})}
+trigger.addEventListener('click',function(e){e.stopPropagation();toggleMenu()});
+overlay.querySelectorAll('a, .overlay-book-btn').forEach(function(el){el.addEventListener('click',function(){closeMenu()})});
+document.getElementById('overlayClose').addEventListener('click',function(){closeMenu()});
+document.getElementById('overlayBookBtn').addEventListener('click',function(){closeMenu();document.getElementById('contact').scrollIntoView({behavior:'smooth'})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&overlay.classList.contains('open'))closeMenu()});
 
-function openMenu(){
-  clearTimeout(closeTimer);
-  overlay.classList.add('open');
-  trigger.classList.add('open');
-  document.body.style.overflow='hidden';
-}
-function closeMenu(){
-  overlay.classList.remove('open');
-  trigger.classList.remove('open');
-  document.body.style.overflow='';
-}
-function toggleMenu(){
-  if(overlay.classList.contains('open')){closeMenu()}else{openMenu()}
-}
-
-// Desktop: hover the three-dot button → menu opens
-// Mouse leaves menu → small delay then close (so you can move between trigger and menu)
-if(!isTouch){
-  trigger.addEventListener('mouseenter',function(){openMenu()});
-  trigger.addEventListener('mouseleave',function(){
-    closeTimer=setTimeout(closeMenu,400);
-  });
-  overlay.addEventListener('mouseenter',function(){clearTimeout(closeTimer)});
-  overlay.addEventListener('mouseleave',function(){
-    closeTimer=setTimeout(closeMenu,300);
-  });
-}
-
-// Mobile/touch: tap to toggle
-trigger.addEventListener('click',function(e){
-  e.stopPropagation();
-  toggleMenu();
-});
-
-// Close when clicking a link or the Book Now button inside menu
-overlay.querySelectorAll('a, .overlay-book-btn').forEach(function(el){
-  el.addEventListener('click',function(){closeMenu()});
-});
-
-// Close on Escape key
-document.addEventListener('keydown',function(e){
-  if(e.key==='Escape'&&overlay.classList.contains('open'))closeMenu();
-});
-
-// Book Now button inside overlay
-document.getElementById('overlayBookBtn').addEventListener('click',function(){
-  closeMenu();
-  document.getElementById('contact').scrollIntoView({behavior:'smooth'});
-});
-
-// Close X button inside overlay
-document.getElementById('overlayClose').addEventListener('click',function(){
-  closeMenu();
-});
-
+// ── Scroll reveal ──
 var reveals=document.querySelectorAll('.reveal');
-var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry,i){if(entry.isIntersecting){setTimeout(function(){entry.target.classList.add('visible')},i*80);observer.unobserve(entry.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
-reveals.forEach(function(el){observer.observe(el)});
+var obs=new IntersectionObserver(function(entries){entries.forEach(function(entry,i){if(entry.isIntersecting){setTimeout(function(){entry.target.classList.add('visible')},i*80);obs.unobserve(entry.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+reveals.forEach(function(el){obs.observe(el)});
 
-// Animated counter
-var statsDone=false;
-var statsObs=new IntersectionObserver(function(entries){
-  if(entries[0].isIntersecting&&!statsDone){
-    statsDone=true;
-    document.querySelectorAll('.stat-number[data-count]').forEach(function(el){
-      var target=parseInt(el.getAttribute('data-count'));
-      var suffix=el.getAttribute('data-suffix')||'';
-      var duration=1400;var start=performance.now();
-      function update(now){
-        var p=Math.min((now-start)/duration,1);
-        var eased=1-Math.pow(1-p,3);
-        el.textContent=Math.floor(eased*target)+suffix;
-        if(p<1)requestAnimationFrame(update);
-      }
-      requestAnimationFrame(update);
-    });
-  }
-},{threshold:0.3});
-statsObs.observe(document.querySelector('.stats-bar'));
+// ── Stat counters ──
+var counted=false;
+var statObs=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting&&!counted){counted=true;document.querySelectorAll('.stat-number[data-count]').forEach(function(el){var target=parseInt(el.getAttribute('data-count'));var suffix=el.getAttribute('data-suffix')||'';var step=Math.ceil(target/40);var current=0;var timer=setInterval(function(){current+=step;if(current>=target){current=target;clearInterval(timer)}el.textContent=current+suffix},30)})}})},{threshold:0.3});
+var statsBar=document.querySelector('.stats-bar');
+if(statsBar)statObs.observe(statsBar);
 
-// ── Contact form submission via Web3Forms ──
+// ── Toast ──
+function showToast(m){var t=document.getElementById('toast');t.textContent=m;t.classList.add('show');clearTimeout(window._tt);window._tt=setTimeout(function(){t.classList.remove('show')},4000)}
+
+// ── Contact form (Web3Forms) ──
 document.getElementById('contactForm').addEventListener('submit',function(e){
   e.preventDefault();
   var btn=this.querySelector('.btn-primary');
@@ -1102,63 +852,6 @@ document.getElementById('contactForm').addEventListener('submit',function(e){
     showToast('Network error. Please try again or call us.');
   });
 });
-
-// ── Flight type tabs ──
-var currentFlightType='oneway';
-function setFlightType(el,type){
-  currentFlightType=type;
-  document.querySelectorAll('.fl-tab').forEach(function(t){t.classList.remove('active')});
-  el.classList.add('active');
-  var ret=document.getElementById('returnField');
-  if(ret) ret.style.display=(type==='oneway')?'none':'flex';
-}
-
-// ── Swap cities ──
-function swapCities(){
-  var f=document.getElementById('flFrom');
-  var t=document.getElementById('flTo');
-  var tmp=f.value;f.value=t.value;t.value=tmp;
-}
-
-// ══════════════════════════════════════════════════════════════════
-// FLIGHT SEARCH — THIS IS WHERE YOUR AFFILIATE MONEY COMES FROM
-//
-// Right now it opens Google Flights (no commission).
-// To START EARNING, replace the URL below with your affiliate link.
-//
-// STEP-BY-STEP:
-// 1. Sign up FREE at https://www.travelpayouts.com
-// 2. Join the "Aviasales" or "Jetradar" flight program
-// 3. Get your marker ID (e.g. 123456)
-// 4. Replace the url line below with:
-//    var url = 'https://www.aviasales.com/search/'
-//      + from + depart.replace(/-/g,'')
-//      + to + (ret ? ret.replace(/-/g,'') : '')
-//      + pax + '?marker=YOUR_MARKER_HERE';
-//
-// That's it. Every booking through that link = commission for you.
-// ══════════════════════════════════════════════════════════════════
-function searchFlights(){
-  var from=document.getElementById('flFrom').value.trim();
-  var to=document.getElementById('flTo').value.trim();
-  var depart=document.getElementById('flDepart').value;
-  var ret=document.getElementById('flReturn').value;
-  var pax=document.getElementById('flPax').value;
-
-  if(!from||!to||!depart){
-    showToast('Please enter origin, destination, and departure date.');
-    return;
-  }
-
-  var url='https://www.google.com/travel/flights?q=flights+from+'
-    +encodeURIComponent(from)+'+to+'+encodeURIComponent(to)
-    +'&d='+depart
-    +(ret?'&r='+ret:'');
-
-  window.open(url,'_blank');
-  showToast('Opening flight results!');
-}
-
 </script>
 </body>
 </html>

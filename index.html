@@ -945,7 +945,11 @@ footer{background:var(--dark-card);border-top:1px solid rgba(255,255,255,.04);pa
     <form class="contact-form reveal" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
       <input type="hidden" name="access_key" value="2363c14e-5d69-4ee5-a251-c5d928c5bfbe">
       <input type="hidden" name="subject" value="New Inquiry — Nexify Travel Agency">
-      <input type="hidden" name="from_name" value="Nexify Website">
+      <input type="hidden" name="from_name" value="Nexify Travel Agency">
+      <input type="hidden" name="autoresponse" value="true">
+      <input type="hidden" name="autoresponse_from" value="Nexify Travel Agency">
+      <input type="hidden" name="autoresponse_subject" value="Thank you for your inquiry — Nexify Travel Agency">
+      <input type="hidden" name="autoresponse_message" value="Hi there! Thank you for reaching out to Nexify Travel Agency. We've received your inquiry and our team is reviewing it. We'll get back to you within 24 hours. If you need immediate assistance, call or WhatsApp us at (248) 687-6075. Warm regards, The Nexify Team">
       <input type="checkbox" name="botcheck" class="hidden" style="display:none!important">
       <div class="form-row"><div class="form-group"><label for="fname">First Name</label><input type="text" id="fname" name="First Name" placeholder="John" required></div><div class="form-group"><label for="lname">Last Name</label><input type="text" id="lname" name="Last Name" placeholder="Doe" required></div></div>
       <div class="form-row"><div class="form-group"><label for="email">Email</label><input type="email" id="email" name="Email" placeholder="john@example.com" required></div><div class="form-group"><label for="phone">Phone</label><input type="tel" id="phone" name="Phone" placeholder="(555) 000-0000"></div></div>
@@ -1146,17 +1150,13 @@ function searchFlights(){
     return;
   }
 
-  // ┌─────────────────────────────────────────────────────────┐
-  // │ REPLACE THIS URL WITH YOUR AFFILIATE LINK TO EARN $$$   │
-  // │ See instructions above for Travelpayouts setup           │
-  // └─────────────────────────────────────────────────────────┘
   var url='https://www.google.com/travel/flights?q=flights+from+'
     +encodeURIComponent(from)+'+to+'+encodeURIComponent(to)
     +'&d='+depart
     +(ret?'&r='+ret:'');
 
   window.open(url,'_blank');
-  showToast('Opening flight results — find the best deal!');
+  showToast('Opening flight results!');
 }
 
 </script>
